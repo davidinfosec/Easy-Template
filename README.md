@@ -4,6 +4,10 @@
 
 The Easy Template Generator, named `etgen.py`, is a Python script designed to automate the creation of folder structures for template-based sessions on specific days of the week. (every Monday, Tuesday, etc.,) It sets up folders, subfolders, and template files for various use-cases, allowing customization of the setup process.
 
+
+https://github.com/davidinfosec/Easy-Template/assets/87215831/8310cef7-d0d0-4709-9423-787ee4317554
+
+
 ## Usage
 
 1. **Run the Script:**
