@@ -46,7 +46,6 @@ The script generates a folder structure for each session:
 
 ## Notes
 
-- Please do not manually edit any generated files to ensure the proper functioning of the sessions.
 - ⚠️ **Warning:** If you specify more than 100 subfolders, consider the impact on your system's performance and file management.
 
 ## Changelog November 26th, 2023
