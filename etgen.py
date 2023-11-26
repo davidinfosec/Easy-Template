@@ -1,5 +1,5 @@
 """
-Program by David D. (DavidInfosec)
+Program by David D. (DavidInfosec) - www.davidinfosec.com
 """
 
 import os
