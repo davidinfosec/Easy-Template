@@ -58,3 +58,10 @@ The script generates a folder structure for each session:
 - Addressed issue with multiple template files in the parent folder.
 - Preserved original file names in subfolders.
 - Code readability and comment updates.
+
+
+### Support and Contributions
+
+If you encounter any issues or have suggestions for improvements, feel free to open an issue or submit a pull request. Your contributions are highly appreciated.
+
+Feel like this has been useful? Donate toward my latest projects. https://www.poof.io/tip/@davidinfosec
