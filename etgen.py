@@ -38,14 +38,13 @@ def generate_template_folders(month, year, day, num_parents, num_subfolders, use
 
             # Handle parent template files
             parent_template_folder = os.path.join(template_folder, "parent")
-            if i == 0:  # Copy only once for the first parent
-                for template_file in os.listdir(parent_template_folder):
-                    template_path = os.path.join(parent_template_folder, template_file)
-                    target_path = os.path.join(root_folder, f"{template_file}")
+            for template_file in os.listdir(parent_template_folder):
+                template_path = os.path.join(parent_template_folder, template_file)
+                target_path = os.path.join(root_folder, f"{template_file}")
 
-                    if use_template and os.path.isfile(template_path):
-                        shutil.copy(template_path, target_path)
-                        print(f"Parent template file created: {target_path}")
+                if use_template and os.path.isfile(template_path):
+                    shutil.copy(template_path, target_path)
+                    print(f"Parent template file created: {target_path}")
 
             # Handle subfolder template files
             sub_template_folder = os.path.join(template_folder, "sub")
