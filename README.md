@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Easy Template Generator, named `etgen.py`, is a Python script designed to automate the creation of folder structures for template-based sessions. It sets up folders, subfolders, and template files for various use-cases, allowing customization of the setup process.
+The Easy Template Generator, named `etgen.py`, is a Python script designed to automate the creation of folder structures for template-based sessions on specific days of the week. (every Monday, Tuesday, etc.,) It sets up folders, subfolders, and template files for various use-cases, allowing customization of the setup process.
 
 ## Usage
 
@@ -16,7 +16,7 @@ The Easy Template Generator, named `etgen.py`, is a Python script designed to au
 
 2. **Follow the Prompts:**
     - Enter the month and year for the session.
-    - Choose the day of the week for your sessions (e.g., Monday, Tuesday, etc.) or customize your own day.
+    - Specify the day of the week for your sessions.
     - Specify the number of subfolders you want (no limit, but a warning will be displayed if more than 100 is specified).
     - The script will create the necessary folder structure, subfolders, and template files.
 
@@ -35,16 +35,21 @@ The script generates a folder structure for each session:
 ## Template Handling
 
 - The script dynamically populates the day name in the folder based on the specified day in the script.
-- If you choose to use template files, it assumes that a template file named `template.xxx` is present in the same folder as the script.
-- Template files are copied into both the root folder and individual subfolders as needed.
+- **Parent Template Folder:** The 'parent' template folder contains files that are common to all sessions in a given month. These files are copied to the root folder for the first occurrence of the specified day in the month.
+- **Subfolder Template Folder:** The 'sub' template folder contains files that are specific to each subfolder (session). Each subfolder gets its set of template files copied from this folder.
+
+## Handling Concurrent Days
+
+- The script intelligently handles sessions on concurrent days of the week. For example, if you have sessions every Monday and Wednesday, the script will create separate folder structures for each day.
+- It calculates the occurrences of the specified day in the month and generates the corresponding folder structure for each occurrence.
+- The session folders are uniquely named to distinguish between different occurrences on the same day.
 
 ## Notes
 
 - Please do not manually edit any generated files to ensure the proper functioning of the sessions.
 - ⚠️ **Warning:** If you specify more than 100 subfolders, consider the impact on your system's performance and file management.
 
-
-### Changelog November 26th, 2023
+## Changelog November 26th, 2023
 
 - Introduced 'Template' folder structure with 'parent' and 'sub' subfolders.
 - Enhanced template handling: 
@@ -54,4 +59,3 @@ The script generates a folder structure for each session:
 - Addressed issue with multiple template files in the parent folder.
 - Preserved original file names in subfolders.
 - Code readability and comment updates.
-
