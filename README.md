@@ -32,10 +32,26 @@ The script generates a folder structure for each session:
     - `1.xxx`, `2.xxx`, ..., `n.xxx`: Template files for each session.
   - `README.md`: Information about the generated folder.
 
+## Template Handling
+
+- The script dynamically populates the day name in the folder based on the specified day in the script.
+- If you choose to use template files, it assumes that a template file named `template.xxx` is present in the same folder as the script.
+- Template files are copied into both the root folder and individual subfolders as needed.
+
 ## Notes
 
-- The script assumes that a template file named `template.xxx` is present in the same folder as the script.
-- It dynamically populates the day name in the folder based on the specified day in the script.
 - Please do not manually edit any generated files to ensure the proper functioning of the sessions.
+- ⚠️ **Warning:** If you specify more than 100 subfolders, consider the impact on your system's performance and file management.
 
-⚠️ **Warning:** If you specify more than 100 subfolders, consider the impact on your system's performance and file management.
+
+### Changelog November 26th, 2023
+
+- Introduced 'Template' folder structure with 'parent' and 'sub' subfolders.
+- Enhanced template handling: 
+  - Copies one template file from 'parent' to the root folder.
+  - Copies individual template files from 'sub' to respective subfolders.
+- Improved user prompts and warnings.
+- Addressed issue with multiple template files in the parent folder.
+- Preserved original file names in subfolders.
+- Code readability and comment updates.
+
