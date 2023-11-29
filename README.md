@@ -52,6 +52,11 @@ The script generates a folder structure for each session:
 
 - ⚠️ **Warning:** If you specify more than 100 subfolders, consider the impact on your system's performance and file management.
 
+## Changelog November 28th, 2023
+
+**Added:**
+- Custom output path option for generated template folders.
+
 ## Changelog November 26th, 2023
 
 - Introduced 'Template' folder structure with 'parent' and 'sub' subfolders.
