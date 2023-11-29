@@ -7,7 +7,10 @@ import shutil
 import calendar
 import sys
 
-def generate_template_folders(month, year, day, num_parents, num_subfolders, use_template, subfolder_prefix):
+def generate_template_folders(month, year, day, num_parents, num_subfolders, use_template, subfolder_prefix, output_path=None):
+    # If output_path is not provided, use the current working directory
+    output_path = output_path or os.getcwd()
+
     # Calculate the day of the week for the 1st day of the month
     first_day_of_month = calendar.weekday(year, month, 1)
 
@@ -27,8 +30,7 @@ def generate_template_folders(month, year, day, num_parents, num_subfolders, use
                 year += 1
 
         # Create root folder for the month, year, and specified day
-        root_folder = f"ET {year}-{month:02d}-{current_day:02d} {calendar.day_name[day]}"
-
+        root_folder = os.path.join(output_path, f"ET {year}-{month:02d}-{current_day:02d} {calendar.day_name[day]}")
         os.makedirs(root_folder)
 
         # Generate subfolders
@@ -96,8 +98,14 @@ if __name__ == "__main__":
     use_template = input("Do you want to use template files? (yes/no): ").lower() == "yes"
     subfolder_prefix = input("Enter a prefix for subfolders (press Enter for default 'Session'): ")
 
+    # Ask if the user wants to specify a custom output path
+    custom_output_path = input("Do you want to specify a custom output path? (press Enter to use default path): ")
+    
+    # If the user provides a custom output path, use it; otherwise, set it to None
+    output_path = custom_output_path if custom_output_path else None
+
     # Generate template folders
     generate_template_folders(month, year, days_of_week.index(selected_day), num_parents, num_subfolders, use_template,
-                              subfolder_prefix)
+                              subfolder_prefix, output_path)
 
     print("Template folders created successfully!")
